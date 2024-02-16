@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {  Routes,Route } from "react-router-dom";
+
+import Layout from "./components/Layout/Layout";
+import SignIn from "./components/login/SignIn";
+import SignUp from "./components/login/SignUp";
+import Weldone from "./components/Weldone";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <main>
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/welcome" element={<Weldone/>}/>
+      </Routes>
+      </main>
+     
+     
+    </Layout>
   );
 }
 
